@@ -6,6 +6,7 @@ from s2s.model._rnn import RNNDecModel, RNNEncModel, RNNModel
 from s2s.model._gru_attention import AttnGRUDecModel, AttnGRUEncModel, AttnGRUModel, AttnGRUBlock
 from s2s.model._lstm_attention import AttnLSTMDecModel, AttnLSTMEncModel, AttnLSTMModel, AttnLSTMBlock
 from s2s.model._rnn_attention import AttnRNNDecModel, AttnRNNEncModel, AttnRNNModel, AttnRNNBlock
+from s2s.model._transformer import TransformerModel
 
 
 Model = Union[
@@ -15,6 +16,7 @@ Model = Union[
     GRUModel,
     LSTMModel,
     RNNModel,
+    TransformerModel,
 ]
 
 MODEL_OPTS: Dict[str, Type[Model]] = {
@@ -24,4 +26,5 @@ MODEL_OPTS: Dict[str, Type[Model]] = {
     GRUModel.model_name: GRUModel,
     LSTMModel.model_name: LSTMModel,
     RNNModel.model_name: RNNModel,
+    TransformerModel.model_name: TransformerModel,
 }
